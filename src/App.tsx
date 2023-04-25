@@ -1,10 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Main from "./views/Main";
+import MainPage from "./pages/Main";
 
 function App() {
   return (
     <ChakraProvider>
-      <Main />
+      <MainPage />
     </ChakraProvider>
   );
 }
