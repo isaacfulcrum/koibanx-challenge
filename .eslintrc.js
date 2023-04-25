@@ -2,9 +2,17 @@ module.exports = {
   extends: [
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "airbnb",
     "prettier",
   ],
+  settings: {
+    "import/resolver": {
+      typescript: true,
+      node: true,
+    },
+  },
   plugins: ["react", "@typescript-eslint", "prettier"],
   env: {
     browser: true,
