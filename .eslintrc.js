@@ -38,13 +38,16 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "import/extensions": [
-      "error",
+      "off",
       "ignorePackages",
       {
         ts: "never",
         tsx: "never",
       },
     ],
+    "no-restricted-exports": "off",
+    "import/export": "off",
+    "default-param-last": "off",
     "consistent-return": "off",
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
