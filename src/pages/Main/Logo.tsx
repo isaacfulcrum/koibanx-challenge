@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 
+// Display the Koibanx logo
+// ******************************************************
 const Logo = () => {
   return (
     <Box as="figure" width="200px" height="52px">

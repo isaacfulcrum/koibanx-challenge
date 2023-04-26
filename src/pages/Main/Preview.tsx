@@ -4,6 +4,8 @@ import { useFilterContext } from "../../context/context";
 
 const BASE_URL = "https://api.koibanx.com/stores";
 
+// Display the filters preview
+// ******************************************************
 const Preview = () => {
   const context = useFilterContext();
   useEffect(() => {

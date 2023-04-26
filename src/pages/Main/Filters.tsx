@@ -3,6 +3,8 @@ import { Flex } from "@chakra-ui/react";
 import { Select, TextInput } from "../../components/Filters";
 import { useFilterContext } from "../../context/context";
 
+// This component will manage the filters of the table
+// *****************************************************
 const Filters = () => {
   const context = useFilterContext();
 
