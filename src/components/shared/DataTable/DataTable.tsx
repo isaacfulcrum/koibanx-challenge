@@ -1,24 +1,16 @@
 import {
   Box,
-  Flex,
-  IconButton,
   Table,
   TableCaption,
   TableContainer,
   Tbody,
   Td,
-  Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import {
-  ArrowUpDownIcon,
-  ChevronUpIcon,
-  ChevronDownIcon,
-} from "@chakra-ui/icons";
-import { ColumnType, TableFields, sortableFields } from "../../../@types";
-import { useFilterContext } from "../../../context/context";
-import { NumberInput, Select } from "../Filters";
+import { ColumnType, TableFields } from "../../../@types";
+import Pagination from "./Pagination";
+import TableHeader from "./TableHeader";
 
 type DataTableProps = {
   caption?: string;
@@ -26,30 +18,13 @@ type DataTableProps = {
   data: TableFields[];
 };
 
+// DataTable component made with Chakra UI, it receives an array of columns and an array of data
+// The columns are mapped to the data and displayed in a table
+// Columns can be sorted by clicking on the header
+// The data is paginated and sorted by the context
+// ************************************************************************************************
 const DataTable = ({ caption, columns = [], data = [] }: DataTableProps) => {
-  const context = useFilterContext();
-  if (!context) return null;
-
-  const handleSort = (column: sortableFields) => {
-    if (context.filters.orderBy === column) {
-      context.dispatch({
-        type: "update-filter",
-        payload: {
-          orderBy: column,
-          direction: context.filters.direction === "asc" ? "desc" : "asc",
-        },
-      });
-    } else {
-      context.dispatch({
-        type: "update-filter",
-        payload: {
-          orderBy: column,
-          direction: "asc",
-        },
-      });
-    }
-  };
-
+  // This function is used to display boolean values as "Sí" or "No"
   const handleBoolean = (value: boolean) => {
     if (value) return "Sí";
     return "No";
@@ -66,38 +41,9 @@ const DataTable = ({ caption, columns = [], data = [] }: DataTableProps) => {
           <TableCaption>{caption}</TableCaption>
           <Thead>
             <Tr>
-              {columns.map((column) => {
-                return (
-                  <Th key={column.label}>
-                    <Flex align="center">
-                      {column.label}
-                      {column.sortable && (
-                        <IconButton
-                          aria-label="Sort"
-                          size="xs"
-                          mx="0.3em"
-                          onClick={() =>
-                            handleSort(column.selector as sortableFields)
-                          }
-                        >
-                          {context.filters.orderBy !== column.selector ? (
-                            <ArrowUpDownIcon color="black" />
-                          ) : (
-                            <>
-                              {context.filters.direction === "asc" && (
-                                <ChevronUpIcon boxSize={18} />
-                              )}
-                              {context.filters.direction === "desc" && (
-                                <ChevronDownIcon boxSize={18} />
-                              )}
-                            </>
-                          )}
-                        </IconButton>
-                      )}
-                    </Flex>
-                  </Th>
-                );
-              })}
+              {columns.map((column) => (
+                <TableHeader key={column.label} {...column} />
+              ))}
             </Tr>
           </Thead>
           <Tbody>
@@ -119,42 +65,7 @@ const DataTable = ({ caption, columns = [], data = [] }: DataTableProps) => {
           </Tbody>
         </Table>
       </TableContainer>
-      <Flex p="0.5em" justify="flex-end" width="100%" gap="1em" align="center">
-        <NumberInput
-          label="Página"
-          min={1}
-          max={100000}
-          value={context.filters.currentPage}
-          onChange={(_, val) =>
-            context.dispatch({
-              type: "update-filter",
-              payload: {
-                currentPage: val,
-              },
-            })
-          }
-        />
-        <Select
-          formControlProps={{ maxW: "120px" }}
-          label="No. de filas"
-          placeholder=""
-          options={[
-            { value: 10, label: "10" },
-            { value: 20, label: "20" },
-            { value: 50, label: "50" },
-            { value: 100, label: "100" },
-          ]}
-          value={context.filters.rowsPerPage}
-          onChange={(e) =>
-            context.dispatch({
-              type: "update-filter",
-              payload: {
-                rowsPerPage: parseInt(e.target.value, 10),
-              },
-            })
-          }
-        />
-      </Flex>
+      <Pagination />
     </Box>
   );
 };
