@@ -18,11 +18,11 @@ And you're ready to go!
 
 This app was developed with React, Typescript and [ChakraUI](https://chakra-ui.com/getting-started). It was initialized with [Create React App](https://create-react-app.dev/docs/adding-typescript/).
 
-Throught the codebase you'll see components made with Chakra's styled system. Layouts, inputs and even the table was made granularly with this technic.
+Throughout the codebase you'll see components made with Chakra's styled system. Layouts, inputs and even the table was made granularly with this technic.
 
 To carry out the task of updating and filtering I used React's context API.
 
-To interact with the system without the hassle of downloading you can visit it's website!
+To interact with the system without the hassle of downloading you can visit it's [website](https://main.d1bzinj7nia2g6.amplifyapp.com/)!
 
 ## Deployment
 
