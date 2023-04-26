@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Flex } from "@chakra-ui/react";
-import { Select, TextInput } from "../../components/shared/Filters";
+import { Select, TextInput } from "../../components/Filters";
 import { useFilterContext } from "../../context/context";
 
 const Filters = () => {

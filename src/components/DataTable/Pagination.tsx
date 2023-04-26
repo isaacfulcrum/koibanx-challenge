@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import { useFilterContext } from "../../../context/context";
+import { useFilterContext } from "../../context/context";
 import { NumberInput, Select } from "../Filters";
 
 // Manages the pagination of the table by changing the rows per page and the current page

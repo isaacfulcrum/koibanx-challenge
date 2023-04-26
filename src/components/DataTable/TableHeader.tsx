@@ -4,8 +4,8 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@chakra-ui/icons";
-import { ColumnType, sortableFields } from "../../../@types";
-import { useFilterContext } from "../../../context/context";
+import { ColumnType, sortableFields } from "../../@types";
+import { useFilterContext } from "../../context/context";
 
 // Manages headers and sorting of the table
 // When a header is clicked, it will sort the table by that column

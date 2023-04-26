@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import DataTable from "../../components/shared/DataTable";
+import DataTable from "../../components/DataTable";
 import Filters from "./Filters";
 import Logo from "./Logo";
 import Preview from "./Preview";

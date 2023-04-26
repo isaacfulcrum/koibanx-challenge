@@ -8,7 +8,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { ColumnType, TableFields } from "../../../@types";
+import { ColumnType, TableFields } from "../../@types";
 import Pagination from "./Pagination";
 import TableHeader from "./TableHeader";
 
