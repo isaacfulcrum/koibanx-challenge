@@ -16,7 +16,7 @@ import {
   ChevronUpIcon,
   ChevronDownIcon,
 } from "@chakra-ui/icons";
-import { ColumnType, TableFields, sortableFields } from "../../../@types/data";
+import { ColumnType, TableFields, sortableFields } from "../../../@types";
 import { useFilterContext } from "../../../context/context";
 import { NumberInput, Select } from "../Filters";
 

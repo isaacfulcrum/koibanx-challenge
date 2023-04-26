@@ -1,21 +1,16 @@
-import { sortableFields } from "../@types/data";
+import { FilterState } from "../@types";
 
-export type FilterState = {
-  stringLike?: string;
-  active?: boolean;
-  currentPage?: number;
-  rowsPerPage?: number;
-  orderBy?: sortableFields;
-  direction?: "asc" | "desc";
-};
-
-// Initial state for the reducer
+// Initial state for the filter reducer
+// *****************************************************
 export const initialState: FilterState = {
   stringLike: "",
   currentPage: 1,
   rowsPerPage: 10,
 };
 
+// Action type for the filter reducer
+// Accepts a partial FilterState object
+// *****************************************************
 export type UpdateFilterAction = {
   type: "update-filter";
   payload: {

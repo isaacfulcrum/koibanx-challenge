@@ -1,4 +1,4 @@
-import { ColumnType, TableFields } from "../../@types/data";
+import { ColumnType, TableFields } from "../../@types";
 
 const useMockData = () => {
   const data: TableFields[] = [

@@ -1,10 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import DataTable from "../../components/shared/DataTable";
-import Logo from "./Logo";
 import Filters from "./Filters";
-import { FilterProvider } from "../../context/context";
-import useMockData from "./useMockData";
+import Logo from "./Logo";
 import Preview from "./Preview";
+import useMockData from "./useMockData";
+import { FilterProvider } from "../../context/context";
 
 const Main = () => {
   const { columns, data } = useMockData();
